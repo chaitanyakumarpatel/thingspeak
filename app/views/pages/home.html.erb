@@ -6,22 +6,21 @@
       <%= t(:home_tagline) %>
     </div>
 
-    <br><br>
-
-    <div>
-      <%= link_to t(:get_started), new_user_registration_path, :class => 'btn btn-danger btn-lg' %>
-      <br><br>
-      <a href="/docs" target="_blank"><%= t(:documentation) %></a>
-      &nbsp; | &nbsp;
-      <a href="http://community.thingspeak.com/forum/" target="_blank"><%=t(:support)%></a>
-      &nbsp; | &nbsp;
-      <a href="https://github.com/iobridge/thingspeak" target="_blank">GitHub</a>
+    <div class="mt-4 mb-4">
+      <%= link_to t(:get_started), new_user_registration_path, class: 'btn btn-danger btn-lg' %>
+      <div class="mt-3 mb-3">
+        <%= link_to t(:documentation), '/docs', target: '_blank', rel: 'noopener noreferrer' %>
+        <span class="mx-2">|</span>
+        <%= link_to t(:support), 'http://community.thingspeak.com/forum/', target: '_blank', rel: 'noopener noreferrer' %>
+        <span class="mx-2">|</span>
+        <%= link_to 'GitHub', 'https://github.com/iobridge/thingspeak', target: '_blank', rel: 'noopener noreferrer' %>
+      </div>
     </div>
   </div>
 
 </div>
 
-<br><br>
+<div class="my-5"></div>
 
 <div class="container">
 
@@ -30,66 +29,66 @@
     <%= render 'layouts/flash' %>
 
     <div class="col-sm-4">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            <i class="fa fa-list fa-fw fa-lg"></i>
-            ThingSpeak Features
-          </h3>
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <i class="fa fa-list fa-fw"></i>
+            <%= t(:features_title, default: "ThingSpeak Features") %>
+          </h5>
         </div>
-        <div class="panel-body panel-home">
-          <ul>
-            <li>Open API</li>
-            <li>Real-time data collection</li>
-            <li>Geolocation data</li>
-            <li>Data processing</li>
-            <li>Data visualizations</li>
-            <li>Device status messages</li>
-            <li>Plugins</li>
+        <div class="card-body">
+          <ul class="list-unstyled mb-0">
+            <li><i class="fa fa-check text-success mr-2"></i><%= t(:feature_open_api, default: "Open API") %></li>
+            <li><i class="fa fa-check text-success mr-2"></i><%= t(:feature_realtime_data, default: "Real-time data collection") %></li>
+            <li><i class="fa fa-check text-success mr-2"></i><%= t(:feature_geolocation, default: "Geolocation data") %></li>
+            <li><i class="fa fa-check text-success mr-2"></i><%= t(:feature_data_processing, default: "Data processing") %></li>
+            <li><i class="fa fa-check text-success mr-2"></i><%= t(:feature_data_visualizations, default: "Data visualizations") %></li>
+            <li><i class="fa fa-check text-success mr-2"></i><%= t(:feature_device_status, default: "Device status messages") %></li>
+            <li><i class="fa fa-check text-success mr-2"></i><%= t(:feature_plugins, default: "Plugins") %></li>
           </ul>
         </div>
       </div>
     </div>
 
     <div class="col-sm-4">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            <i class="fa fa-gears fa-fw fa-lg"></i>
-            Integrate
-          </h3>
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <i class="fa fa-gears fa-fw"></i>
+            <%= t(:integrate_title, default: "Integrate") %>
+          </h5>
         </div>
-        <div class="panel-body panel-home">
-          <ul>
-            <li><a href="http://community.thingspeak.com/tutorials/arduino/using-an-arduino-ethernet-shield-to-update-a-thingspeak-channel/" target="_blank">Arduino</a></li>
+        <div class="card-body">
+          <ul class="list-unstyled mb-0">
+            <li><%= link_to 'Arduino', 'http://community.thingspeak.com/tutorials/arduino/using-an-arduino-ethernet-shield-to-update-a-thingspeak-channel/', target: '_blank', rel: 'noopener noreferrer' %></li>
             <li>Raspberry Pi</li>
-            <li><a href="http://iobridge.com/" target="_blank">ioBridge</a> / <a href="http://realtime.io/" target="_blank">RealTime.io</a></li>
-            <li><a href="http://community.thingspeak.com/tutorials/electric-imp/data-storage-and-retrieval-with-thingspeak/" target="_blank">Electric Imp</a></li>
+            <li><%= link_to 'ioBridge', 'http://iobridge.com/', target: '_blank', rel: 'noopener noreferrer' %> / <%= link_to 'RealTime.io', 'http://realtime.io/', target: '_blank', rel: 'noopener noreferrer' %></li>
+            <li><%= link_to 'Electric Imp', 'http://community.thingspeak.com/tutorials/electric-imp/data-storage-and-retrieval-with-thingspeak/', target: '_blank', rel: 'noopener noreferrer' %></li>
             <li>Mobile / Web Applications</li>
             <li>Social Networks</li>
-            <li><a href="http://www.mathworks.com/hardware-support/thingspeak.html" target="_blank">Data Analytics with MATLAB</a></li>
+            <li><%= link_to 'MATLAB Analytics', 'http://www.mathworks.com/hardware-support/thingspeak.html', target: '_blank', rel: 'noopener noreferrer' %></li>
           </ul>
         </div>
       </div>
     </div>
 
     <div class="col-sm-4">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            <i class="fa fa-comments fa-fw fa-lg"></i>
-            Connect With Us
-          </h3>
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <i class="fa fa-comments fa-fw"></i>
+            <%= t(:connect_title, default: "Connect With Us") %>
+          </h5>
         </div>
-        <div class="panel-body panel-home">
-          <ul>
-            <li><a href="https://github.com/iobridge/ThingSpeak" title="Open Source Internet of Things Project on GitHub" target="_blank">GitHub</a></li>
-            <li><a href="http://www.twitter.com/thingspeak" title="Follow ThingSpeak on Twitter" target="_blank">Twitter</a> / <a href="https://plus.google.com/+thingspeak" rel="publisher" target="_blank">Google+</a></li>
-            <li><a href="http://community.thingspeak.com/" title="ThingSpeak IoT Blog">Blog</a></li>
-            <li><a href="http://community.thingspeak.com/forum/" title="Join the ThingSpeak Forum">Forum</a></li>
-            <li><a href="/docs" title="ThingSpeak API and Apps Documentation">Documentation</a></li>
-            <li><a href="/docs/tutorials" title="ThingSpeak Tutorials">Tutorials</a></li>
-            <li><a href="mailto:support@thingspeak.com" title="Contact ThingSpeak">Questions</a></li>
+        <div class="card-body">
+          <ul class="list-unstyled mb-0">
+            <li><%= link_to 'GitHub', 'https://github.com/iobridge/ThingSpeak', title: t(:github_title, default: "Open Source Internet of Things Project on GitHub"), target: '_blank', rel: 'noopener noreferrer' %></li>
+            <li><%= link_to 'Twitter', 'http://www.twitter.com/thingspeak', title: t(:twitter_title, default: "Follow ThingSpeak on Twitter"), target: '_blank', rel: 'noopener noreferrer' %> / <%= link_to 'Google+', 'https://plus.google.com/+thingspeak', rel: 'publisher', target: '_blank', rel: 'noopener noreferrer' %></li>
+            <li><%= link_to t(:blog, default: "Blog"), 'http://community.thingspeak.com/', title: t(:blog_title, default: "ThingSpeak IoT Blog") %></li>
+            <li><%= link_to t(:forum, default: "Forum"), 'http://community.thingspeak.com/forum/', title: t(:forum_title, default: "Join the ThingSpeak Forum") %></li>
+            <li><%= link_to t(:documentation), '/docs', title: t(:docs_title, default: "ThingSpeak API and Apps Documentation") %></li>
+            <li><%= link_to t(:tutorials, default: "Tutorials"), '/docs/tutorials', title: t(:tutorials_title, default: "ThingSpeak Tutorials") %></li>
+            <li><%= link_to t(:questions, default: "Questions"), 'mailto:support@thingspeak.com', title: t(:contact_title, default: "Contact ThingSpeak") %></li>
           </ul>
         </div>
       </div>
@@ -97,37 +96,35 @@
 
   </div>
 
-  <br><br>
+  <div class="my-5"></div>
 
-  <div class="jumbotron">
-    <h1>Get Started</h1>
-    <p>If you are ready to build your Internet of Things, <%= link_to t(:signup), new_user_registration_path, :class => 'btn btn-primary btn-sm' %> for a free developer account.</p>
+  <div class="jumbotron p-4 p-md-5 rounded bg-light">
+    <h1 class="display-4"><%= t(:get_started_title, default: "Get Started") %></h1>
+    <p class="lead"><%= t(:get_started_description, default: "If you are ready to build your Internet of Things,") %> <%= link_to t(:signup), new_user_registration_path, class: 'btn btn-primary btn-sm' %> <%= t(:for_free_account, default: "for a free developer account.") %></p>
     <p>
-      <a href="/docs" target="_blank" class="btn btn-info btn-lg btn-margin">Learn More</a>
-      <a id="contact_link" class="btn btn-success btn-lg btn-margin"><%= t(:contact_us) %></a>
+      <%= link_to t(:learn_more, default: "Learn More"), '/docs', target: '_blank', rel: 'noopener noreferrer', class: 'btn btn-info btn-lg mr-2' %>
+      <a id="contact_link" class="btn btn-success btn-lg"><%= t(:contact_us) %></a>
     </p>
     <div id="contact_form">
-      <br>
       <%= render :partial => 'pages/contact_form' %>
     </div>
   </div>
 
-  <br><br>
-
-  <div class="hidden-xs panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">
-        <a href="http://community.thingspeak.com/" title="ThingSpeak Community, Blog, and Forum">Latest News<a> <a href="http://feeds.feedburner.com/internetofthings/" title="ThingSpeak RSS Feed"><i class="fa fa-rss fa-fw" style="color: #fff; background-color: #ff9305; border: 1px solid #cc7504;"></i></a>
-      </h3>
+  <div class="card mb-4 d-none d-sm-block">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">
+        <%= link_to t(:latest_news, default: "Latest News"), 'http://community.thingspeak.com/', title: t(:news_title, default: "ThingSpeak Community, Blog, and Forum") %>
+        <%= link_to '', 'http://feeds.feedburner.com/internetofthings/', title: t(:rss_title, default: "ThingSpeak RSS Feed"), class: 'fa fa-rss fa-fw ml-2', style: 'color: #fff;' %>
+      </h5>
     </div>
-    <div class="panel-body">
-      <% cache("blog-posts-on-homepage", :expires_in => 10.minutes) do %>
-        <%= raw blog_entries %>
+    <div class="card-body">
+      <% cache("blog-posts-on-homepage", expires_in: ENV.fetch('CACHE_EXPIRY_MINUTES', 10).to_i.minutes) do %>
+        <%= sanitize blog_entries %>
       <% end %>
     </div>
   </div>
 
-  <br>
-
 </div>
+
+
 
